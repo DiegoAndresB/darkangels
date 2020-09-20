@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{C4B7F54B-A365-7E9B-7584-D7F829E93663}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Codigos/LogicaDetective.cs">
     <Files>
-      <File FileName="Assets/Codigos/LogicaDetective.cs" Line="1" Column="1" />
+      <File FileName="Assets/Codigos/LogicaDetective.cs" Line="100" Column="13" />
+      <File FileName="Assets/Codigos/LogicaCabeza.cs" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f6a15282-1025-4819-a7a8-a4697ac31402" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d70c231f-4073-4b20-8179-4490f8420867" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

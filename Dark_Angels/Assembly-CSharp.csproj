@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Codigos/LogicaDetective.cs" />
+    <Compile Include="Assets/Codigos/LogicaPies.cs" />
+    <Compile Include="Assets/Codigos/LogicaCabeza.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
