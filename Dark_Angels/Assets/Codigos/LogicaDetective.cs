@@ -15,7 +15,7 @@ public class LogicaDetective : MonoBehaviour
     public bool estoyAgachado;
     
 
-    private Animator anim;
+    public Animator anim;
     public float x, y;
 
     public Rigidbody rb;
@@ -26,6 +26,7 @@ public class LogicaDetective : MonoBehaviour
     public float velocidadAgachado;
 
     public bool estoyAtacando;
+    public bool estoyApuntando;
     public bool avanzoSolo;
     public float impulsoGolpe = 10f;
 
@@ -41,7 +42,7 @@ public class LogicaDetective : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(!estoyAtacando)
+        if(!estoyAtacando || !estoyApuntando)
         {
             transform.Rotate(0, x * Time.deltaTime * velocidadRotacion, 0);
             transform.Translate(0, 0, y * Time.deltaTime * velocidadMovimiento);
@@ -60,18 +61,24 @@ public class LogicaDetective : MonoBehaviour
         x = Input.GetAxis("Horizontal");
         y = Input.GetAxis("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Return) && puedoSaltar && !estoyAtacando)
+        if (Input.GetKeyDown(KeyCode.Q) && puedoSaltar && !estoyAtacando)
         {
             anim.SetTrigger("golpeo");
             estoyAtacando = true;
-        } 
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1) && puedoSaltar && !estoyAtacando)
+        {
+            anim.SetTrigger("apuntando");
+            estoyApuntando = true;
+        }
 
         anim.SetFloat("VelX",x);
         anim.SetFloat("VelY",y);
 
         if(puedoSaltar)
         {
-            if (!estoyAtacando)
+            if (!estoyAtacando || !estoyApuntando)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
