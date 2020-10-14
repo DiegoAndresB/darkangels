@@ -36,7 +36,7 @@ public class Arma : MonoBehaviour
         timer += Time.deltaTime;
         if(timer >= fireRate)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 timer = 0f;
                 Disparar();

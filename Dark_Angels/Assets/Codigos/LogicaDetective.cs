@@ -41,7 +41,7 @@ public class LogicaDetective : MonoBehaviour
         velocidadAgachado = velocidadMovimiento * 0.5f;
         velocidadApuntando = velocidadMovimiento * 0.5f;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     void FixedUpdate()
@@ -89,7 +89,7 @@ public class LogicaDetective : MonoBehaviour
 
         if(puedoSaltar)
         {
-            if (!estoyAtacando)
+            if (!estoyAtacando || !estoyApuntando)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {

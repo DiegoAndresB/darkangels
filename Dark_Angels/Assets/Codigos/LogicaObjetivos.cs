@@ -7,15 +7,15 @@ using TMPro;
 public class LogicaObjetivos : MonoBehaviour
 {
 
-    public int numArmas;
+    public int numEnemigos;
     public TextMeshProUGUI textoMision;
     public GameObject botonDeMision;
 
     // Start is called before the first frame update
     void Start()
     {
-        numArmas = GameObject.FindGameObjectsWithTag("objetivo").Length;
-        textoMision.text = "Elimina a los demonios" + "\n Restantes: " + numArmas;
+        numEnemigos = GameObject.FindGameObjectsWithTag("objetivo").Length;
+        textoMision.text = "Elimina a los demonios" + "\n Restantes: " + numEnemigos;
     }
 
     // Update is called once per frame
@@ -29,10 +29,10 @@ public class LogicaObjetivos : MonoBehaviour
         if(col.gameObject.tag == "objetivo")
         {
             Destroy(col.transform.parent.gameObject);
-            numArmas--;
-            textoMision.text = "Elimina a los demonios" + "\n Restantes: " + numArmas;
+            numEnemigos--;
+            textoMision.text = "Elimina a los demonios" + "\n Restantes: " + numEnemigos;
 
-            if (numArmas <= 0)
+            if (numEnemigos <= 0)
             {
                 textoMision.text = "Misión Completada";
                 botonDeMision.SetActive(true);

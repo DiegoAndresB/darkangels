@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{C4B7F54B-A365-7E9B-7584-D7F829E93663}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Codigos/LogicaDetective.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Codigos/LogicaObjetivos.cs">
     <Files>
-      <File FileName="Assets/Codigos/LogicaDetective.cs" Line="88" Column="33" />
-      <File FileName="Assets/Codigos/Arma.cs" />
-      <File FileName="Assets/Codigos/CameraController.cs" />
+      <File FileName="Assets/Codigos/LogicaDetective.cs" Line="22" Column="35" />
+      <File FileName="Assets/Codigos/Arma.cs" Line="26" Column="1" />
+      <File FileName="Assets/Codigos/CameraController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Codigos/LogicaObjetivos.cs" Line="23" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2a38112e-3c5b-4c53-ab9a-b12026c69500" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="01cfddd9-e7c0-4edf-b15e-692358a962c8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
