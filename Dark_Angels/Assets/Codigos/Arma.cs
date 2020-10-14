@@ -46,12 +46,13 @@ public class Arma : MonoBehaviour
 
     private void Disparar()
     {
-        Debug.DrawRay(transform.position, transform.forward * 100, Color.red, 2f);
-
         muzzleParticle.Play();
         audioArma.Play();
 
-        Ray ray = new Ray(firePoint.position, firePoint.forward);
+        Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
+
+        Debug.DrawRay(ray.origin, ray.direction * 100, Color.red, 2f);
+
         RaycastHit hitInfo;
 
         if (Physics.Raycast(ray, out hitInfo, 100))

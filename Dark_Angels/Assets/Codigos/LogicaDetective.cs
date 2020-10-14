@@ -24,6 +24,7 @@ public class LogicaDetective : MonoBehaviour
 
     public float velocidadInicial;
     public float velocidadAgachado;
+    public float velocidadApuntando;
 
     public bool estoyAtacando;
     public bool estoyApuntando;
@@ -38,6 +39,9 @@ public class LogicaDetective : MonoBehaviour
 
         velocidadInicial = velocidadMovimiento;
         velocidadAgachado = velocidadMovimiento * 0.5f;
+        velocidadApuntando = velocidadMovimiento * 0.5f;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void FixedUpdate()
@@ -58,7 +62,7 @@ public class LogicaDetective : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        x = Input.GetAxis("Horizontal");
+        x = Input.GetAxis("Mouse X");
         y = Input.GetAxis("Vertical");
 
         if (Input.GetKeyDown(KeyCode.Q) && puedoSaltar && !estoyAtacando)
@@ -67,18 +71,25 @@ public class LogicaDetective : MonoBehaviour
             estoyAtacando = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && puedoSaltar && !estoyAtacando)
+        if (Input.GetKey(KeyCode.Mouse1) && puedoSaltar && !estoyAtacando)
         {
-            anim.SetTrigger("apuntando");
+            anim.SetBool("apuntando", true);
+            velocidadMovimiento = velocidadApuntando;
             estoyApuntando = true;
-        }
 
+        } else
+        {
+            anim.SetBool("apuntando", false);
+            velocidadMovimiento = velocidadInicial;
+            estoyApuntando = false;
+        }
+ 
         anim.SetFloat("VelX",x);
         anim.SetFloat("VelY",y);
 
         if(puedoSaltar)
         {
-            if (!estoyAtacando || !estoyApuntando)
+            if (!estoyAtacando)
             {
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
@@ -111,7 +122,7 @@ public class LogicaDetective : MonoBehaviour
                         colAgachado.enabled = false;
                         colParado.enabled = true;
                         estoyAgachado = false;
-                    }           
+                    }
                 }
             }
           
