@@ -1,34 +1,42 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.AI;
 
 public class LogicaDemonios : MonoBehaviour
 {
-    public LogicaNPC logicaNPC;
-    // Start is called before the first frame update
-    void Start()
+    private DeteccionJugador deteccionJugador;
+    private NavMeshAgent navMeshAgent;
+    private Animator anim;
+    private Transform objetivo;
+    
+    private void Awake()
     {
-        
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
+        deteccionJugador = GetComponent<DeteccionJugador>();
+        deteccionJugador.Detectado += DeteccionJugador_Detectado; ;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void DeteccionJugador_Detectado(Transform objetivo)
     {
-        
+        this.objetivo = objetivo;
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void Update()
     {
-        if(col.tag == "Player")
+        if (objetivo != null)
         {
-            logicaNPC.numObjetivos--;
-            logicaNPC.textoMision.text = "Elimina a los demonios" + "\n Restantes: " + logicaNPC.numObjetivos;
-            if(logicaNPC.numObjetivos <= 0)
+            navMeshAgent.SetDestination(objetivo.position);
+            float velX = navMeshAgent.velocity.magnitude;
+            anim.SetFloat("VelX", velX);
+            anim.SetBool("detecto", true);
+
+            if (navMeshAgent.stoppingDistance == 3)
             {
-                logicaNPC.textoMision.text = "Misión Completada";
-                logicaNPC.botonMision.SetActive(true);
+                anim.SetBool("atacar", true);
+            } else
+            {
+               anim.SetBool("atacar", false);
             }
-            transform.parent.gameObject.SetActive(false);
         }
     }
 }

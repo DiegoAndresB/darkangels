@@ -10,6 +10,8 @@ public class Vida : MonoBehaviour
 
     private int vidaActual;
 
+    public LogicaNPC logicaNPC;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,13 @@ public class Vida : MonoBehaviour
 
     private void Muere()
     {
-        gameObject.SetActive(false);
+       logicaNPC.numObjetivos--;
+       logicaNPC.textoMision.text = "Elimina a los demonios" + "\n Restantes: " + logicaNPC.numObjetivos;
+          if (logicaNPC.numObjetivos <= 0)
+          {
+             logicaNPC.textoMision.text = "Misión Completada";
+             logicaNPC.botonMision.SetActive(true);
+          }
+          gameObject.SetActive(false);
     }
 }
