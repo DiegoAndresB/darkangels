@@ -7,14 +7,6 @@ public class LogicaDetective : MonoBehaviour
     public float velocidadMovimiento = 5.0f;
     public float velocidadRotacion = 200.0f;
 
-    //cambio de collider:
-    public CapsuleCollider colParado;
-    public CapsuleCollider colAgachado;
-    public GameObject cabeza;
-    public LogicaCabeza logicaCabeza;
-    public bool estoyAgachado;
-    
-
     public Animator anim;
     public float x, y;
 
@@ -23,7 +15,6 @@ public class LogicaDetective : MonoBehaviour
     public bool puedoSaltar;
 
     public float velocidadInicial;
-    public float velocidadAgachado;
     public float velocidadApuntando;
 
     public bool estoyAtacando;
@@ -38,7 +29,6 @@ public class LogicaDetective : MonoBehaviour
         anim = GetComponent<Animator>();
 
         velocidadInicial = velocidadMovimiento;
-        velocidadAgachado = velocidadMovimiento * 0.5f;
         velocidadApuntando = velocidadMovimiento * 0.5f;
 
         //Cursor.lockState = CursorLockMode.Locked;
@@ -95,34 +85,6 @@ public class LogicaDetective : MonoBehaviour
                 {
                     anim.SetBool("salte", true);
                     rb.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode.Impulse);
-                }
-
-                if (Input.GetKey(KeyCode.LeftControl))
-                {
-                    anim.SetBool("agachado", true);
-                    velocidadMovimiento = velocidadAgachado;
-
-                    //cambio de collider:
-                    colAgachado.enabled = true;
-                    colParado.enabled = false;
-
-                    cabeza.SetActive(true);
-                    estoyAgachado = true;
-                }
-
-                else
-                {
-                    if(logicaCabeza.contadorColision <= 0)
-                    {
-                        anim.SetBool("agachado", false);
-                        velocidadMovimiento = velocidadInicial;
-
-                        //cambio de collider:
-                        cabeza.SetActive(false);
-                        colAgachado.enabled = false;
-                        colParado.enabled = true;
-                        estoyAgachado = false;
-                    }
                 }
             }
           
