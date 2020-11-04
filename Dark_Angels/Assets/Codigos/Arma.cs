@@ -22,8 +22,6 @@ public class Arma : MonoBehaviour
     [SerializeField]
     private AudioSource audioArma;
 
-    private float timer;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,15 +31,12 @@ public class Arma : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if(timer >= fireRate)
+       
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
-            {
-                timer = 0f;
-                Disparar();
-            }
+           Disparar();
         }
+        
     }
 
     private void Disparar()
@@ -57,10 +52,10 @@ public class Arma : MonoBehaviour
 
         if (Physics.Raycast(ray, out hitInfo, 100))
         {
-            var vida = hitInfo.collider.GetComponent<Vida>();
+            var vidaDemonio = hitInfo.collider.GetComponent<AtaqueDemonio>();
 
-            if (vida != null)      
-                vida.recibeDaño(daño);
+            if (vidaDemonio != null)      
+                vidaDemonio.recibeDaño();
         }
     }
 }

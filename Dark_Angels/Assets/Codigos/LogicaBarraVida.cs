@@ -22,8 +22,7 @@ public class LogicaBarraVida : MonoBehaviour
 
         if(vidaActual <= 0)
         {
-            gameObject.SetActive(false);
-            //Elimiado
+          gameObject.SetActive(false);
         }
 
         if(vidaActual >= vidaMax)
@@ -35,5 +34,16 @@ public class LogicaBarraVida : MonoBehaviour
     public void RevisarVida()
     {
         imagenBarraVida.fillAmount = vidaActual / vidaMax;
+    }
+
+    public void ReiniciarNivel()
+    {
+        StartCoroutine(Reiniciar());
+    }
+
+    IEnumerator Reiniciar()
+    {
+        yield return new WaitForSeconds(8);
+        Application.LoadLevel(Application.loadedLevel);
     }
 }

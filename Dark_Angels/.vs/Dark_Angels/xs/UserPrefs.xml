@@ -1,14 +1,8 @@
 ﻿<Properties StartupConfiguration="{C4B7F54B-A365-7E9B-7584-D7F829E93663}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Codigos/AtaqueDemonio.cs">
-    <Files>
-      <File FileName="Assets/Codigos/LogicaDetective.cs" Line="1" Column="1" />
-      <File FileName="Assets/Codigos/LogicaBarraVida.cs" Line="32" Column="10" />
-      <File FileName="Assets/Codigos/AtaqueDemonio.cs" Line="9" Column="30" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ec417bb6-d956-4050-acbe-fbccfed87a9c" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ba5f0157-8e2f-4fce-b63d-199336d27422" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

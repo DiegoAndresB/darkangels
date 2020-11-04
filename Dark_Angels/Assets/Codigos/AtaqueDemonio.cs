@@ -8,15 +8,18 @@ public class AtaqueDemonio : MonoBehaviour
     private float dañoAtaque = 1.0f;
     public bool jugadorCerca;
     public float timer;
+    public int valorPuntos = 10;
 
     Animator anim;
     GameObject detective;
-    LogicaBarraVida vidaDetective;
+    public LogicaBarraVida vidaDetective;
+    public LogicaBarraVida vidaDemonio;
 
     private void Awake()
     {
         detective = GameObject.FindGameObjectWithTag("Player");
         vidaDetective = detective.GetComponent<LogicaBarraVida>();
+        vidaDemonio = GetComponent<LogicaBarraVida>();
         anim = GetComponent<Animator>();
     }
 
@@ -25,6 +28,7 @@ public class AtaqueDemonio : MonoBehaviour
         if (other.gameObject == detective)
         {
             jugadorCerca = true;
+            anim.SetBool("atacar", true);
         }
     }
 
@@ -33,6 +37,7 @@ public class AtaqueDemonio : MonoBehaviour
         if (other.gameObject == detective)
         {
             jugadorCerca = false;
+            anim.SetBool("atacar", false);
         }
     }
 
@@ -40,7 +45,7 @@ public class AtaqueDemonio : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer >= tiempoEntreAtaques && jugadorCerca)
+        if(timer >= tiempoEntreAtaques && jugadorCerca && vidaDemonio.vidaActual > 0)
         {
             Atacar();
         }
@@ -53,6 +58,24 @@ public class AtaqueDemonio : MonoBehaviour
         if(vidaDetective.vidaActual > 0)
         {
            vidaDetective.vidaActual -= dañoAtaque;
+        } else
+        {
+            anim.SetBool("parado", true);
+        }
+    }
+
+    public void recibeDaño()
+    {
+        timer = 0f;
+
+        if (vidaDemonio.vidaActual > 0)
+        {
+            vidaDemonio.vidaActual -= dañoAtaque;
+        }
+
+        if ( vidaDemonio.vidaActual <= 0)
+        {
+            Puntos.puntos += valorPuntos;
         }
     }
 }

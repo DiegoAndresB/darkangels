@@ -55,16 +55,17 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Codigos/LogicaNPC.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets/Codigos/LogicaBarraVida.cs" />
     <Compile Include="Assets/EffectExamples/Shared/Scripts/ParticleMenu.cs" />
     <Compile Include="Assets/Codigos/DeteccionJugador.cs" />
     <Compile Include="Assets/EffectExamples/Shared/Scripts/ParticleCollision.cs" />
-    <Compile Include="Assets/Codigos/LogicaDemonios.cs" />
+    <Compile Include="Assets/Codigos/LogicaDemonio.cs" />
     <Compile Include="Assets/EffectExamples/Shared/Scripts/GunShoot.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
     <Compile Include="Assets/EffectExamples/Shared/Scripts/DecalDestroyer.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/WarpTextExample.cs" />
+    <Compile Include="Assets/Codigos/GenerarEnemigos.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark01.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextSelector_A.cs" />
-    <Compile Include="Assets/Codigos/Vida.cs" />
+    <Compile Include="Assets/Codigos/Daño.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_FrameRateCounter.cs" />
@@ -110,10 +111,11 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/AllSkyFree/AllSkyFree_Menu.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/EnvMapAnimator.cs" />
-    <Compile Include="Assets/Codigos/AtaqueDemonio.cs" />
     <Compile Include="Assets/Codigos/LogicaSeguirCamara.cs" />
-    <Compile Include="Assets/Codigos/LogicaBarraVida.cs" />
-    <Compile Include="Assets/Codigos/Daño.cs" />
+    <Compile Include="Assets/Codigos/Puntos.cs" />
+    <Compile Include="Assets/Codigos/AtaqueDemonio.cs" />
+    <Compile Include="Assets/Codigos/LogicaNPC.cs" />
+    <Compile Include="Assets/Codigos/GameOver.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
